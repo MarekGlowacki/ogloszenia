@@ -17,7 +17,7 @@ const CategoryItem = ({ id, name, description, offers }) => `
         </div>
         <div class="col-md-9">
             <h5 class="title">${name}</h5>
-            <p class="offersNumber">Liczba ofert: ${offers}</p>
+            <p class="offersNumber">OFAs! number: ${offers}</p>
             <p class="description">${description}</p>
         </div>
     </div>
@@ -25,7 +25,7 @@ const CategoryItem = ({ id, name, description, offers }) => `
 
 const Empty = () => `
     <div class="row mt-2">
-        <h2 class="mx-auto">Brak ogłoszeń</h2>
+        <h2 class="mx-auto">No OFA!</h2>
     </div>
 `;
 
@@ -35,7 +35,7 @@ const Loader = () => `
 
 const Error = () => `
     <div class="row mt-2">
-        <h2 class="mx-auto">Błąd komunikacji z serwerem</h2>
+        <h2 class="mx-auto">server connection error</h2>
     </div>
     <div class="row mt-2">
         <i class="far fa-frown fa-10x mx-auto"></i>
@@ -44,7 +44,7 @@ const Error = () => `
 
 const OfferNotFound = () => `
     <div class="row mt-2">
-        <h2 class="mx-auto">Ta oferta nie istnieje</h2>
+        <h2 class="mx-auto">This OFA! do not exist</h2>
     </div>
     <div class="row mt-2">
         <i class="far fa-frown fa-10x mx-auto"></i>
@@ -62,7 +62,7 @@ const Offer = (offer) => `
                 <img class="img-fluid mx-auto d-block" src="${offer.imgUrl}">
             </div>
             <div class="col-md-8">
-                <h5>${offer.price}zł</h5>
+                <h5>${offer.price} TZS</h5>
                 <p>${offer.description}.</p>
             </div>
         </div>
@@ -70,7 +70,7 @@ const Offer = (offer) => `
 
 const Success = () => `
     <div class="row mt-2">
-        <h2 class="mx-auto">Dane zapisano pomyślnie</h2>
+        <h2 class="mx-auto">Data saved successfully</h2>
     </div>
     <div class="row mt-2">
         <i class="far fa-smile fa-10x mx-auto"></i>
@@ -129,10 +129,10 @@ const renderOfferCount = () => {
     }).then(function(offers) {
         if (offers > 0) {
             jumboContainer.append($("<p></p>")
-                .text(`Liczba ogłoszeń: ${offers}`));
+                .text(`OFAs! number: ${offers}`));
         } else {
             jumboContainer.append($("<p></p>")
-                .text('Brak ogłoszeń'));
+                .text('No OFAs!'));
         }
     });
 };
@@ -181,7 +181,7 @@ const fillCategoriesInAddForm = () => {
         });
     }).fail(() => {
         $('#add-button').prop('disabled', 'true');
-        $('#err-message').text('Nie udało się pobrać kategorii').show();
+        $('#err-message').text("I couldn't load category").show();
     });
 };
 

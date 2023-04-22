@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://80.211.250.97:3306/ogloszenia
+    url: jdbc:mysql://baza:3306/ogloszenia
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123
